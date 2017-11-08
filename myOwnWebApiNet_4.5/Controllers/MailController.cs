@@ -42,6 +42,8 @@ namespace myOwnWebApiNet_4._5.Controllers
                 mailMessage.IsBodyHtml = true;
 
                 SmtpClient smtp = new SmtpClient("smtp.1und1.com");
+                //Here you have to fill your Credentials of ur Email Account
+                smtp.Credentials = new System.Net.NetworkCredential("name", "password");
 
                 await smtp.SendMailAsync(mailMessage);
 
